@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+/* Container Styles */
+#transaction-management {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type="text"], input[type="date"], input[type="number"] {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+/* Actions Column Styles */
+td:last-child {
+    text-align: center;
+}
+
+/* Add some spacing between sections */
+h3 {
+    margin-top: 40px;
+}
+    </style>
+</head>
+<body>
+    <h2>User Dashboard</h2>
+    <div id="transaction-management">
+        <h3>Add Transaction</h3>
+        <form id="add-transaction-form">
+            <input type="text" id="transaction_id" name="transaction_id" placeholder="Transaction ID">
+            <input type="text" id="customer_id" name="customer_id" placeholder="Customer ID">
+            <input type="date" id="transaction_date" name="transaction_date" placeholder="Transaction Date">
+            <input type="number" id="amount" name="amount" placeholder="Amount">
+            <input type="text" id="status" name="status" placeholder="Status">
+            <input type="text" id="payment_method" name="payment_method" placeholder="Payment Method">
+            <input type="text" id="currency" name="currency" placeholder="Currency">
+            <button type="submit" id="add-transaction-btn">Add Transaction</button>
+        </form>
+        
+
+        <h3>My Transactions</h3>
+        <table id="user-transaction-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Transaction ID</th>
+                    <th>Customer ID</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Payment Method</th>
+                    <th>Currency</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- User's transactions will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./js/user.js"></script>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        
+        /* Dashboard Container */
+        .dashboard-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Section Styles */
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section h3 {
+            margin-top: 0;
+        }
+        
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        label {
+            margin-bottom: 10px;
+        }
+        
+        input, select {
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        button[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+        
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Admin Dashboard</h2>
+    <div id="user-management">
+        <h3>Create User</h3>
+        <form id="create-user-form">
+            <label for="new-username">Username:</label>
+            <input type="text" id="new-username" required><br>
+            <label for="new-password">Password:</label>
+            <input type="password" id="new-password" required><br>
+            <label for="new-role">Role:</label>
+            <select id="new-role" required>
+                <option value="User">User</option>
+                <option value="Admin">Admin</option>
+            </select><br>
+            <button type="submit">Create User</button>
+        </form>
+    </div>
+
+    <div id="transaction-management">
+        <h3>View Transactions</h3>
+        <table id="transaction-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Transaction ID</th>
+                    <th>Customer ID</th>
+                    <th>Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Payment Method</th>
+                    <th>Currency</th>
+                    <th>Added By</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Transaction rows will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="deletion-requests">
+        <h3>Approve Deletion Requests</h3>
+        <table id="deletion-table">
+            <thead>
+                <tr>
+                    <th>Request ID</th>
+                    <th>Transaction ID</th>
+                    <th>Requested By</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Deletion request rows will be populated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./js/admin.js"></script>
+</body>
+</html>
